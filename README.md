@@ -18,5 +18,19 @@ To leverage these queries effectively, follow these steps:
 
 6. **Analyze and Export:** Review the query results to obtain the desired report data. You can export the results to various formats (e.g., CSV, Excel) for further analysis and visualization.
 
+### Using the Queries in Metabase
+
+If you want to build a Metabase dashboard from these reports, use the Metabase-ready SQL files in `/metabase/queries`.
+
+Those queries replace MySQL `SET @variable := ...` statements with Metabase variables such as `{{days}}`, `{{months}}`, `{{user_id}}`, and `{{topic}}`, which makes them easier to save as Metabase questions and connect to dashboard filters.
+
+The repository now includes:
+
+- `/metabase/README.md` - step-by-step instructions for adding the queries to Metabase
+- `/metabase/queries/*.sql` - Metabase-native versions of each SQL script
+- `/metabase/dashboard.md` - a suggested dashboard layout, visualizations, and filter mappings
+
+Start with `/metabase/README.md` to create the questions, then use `/metabase/dashboard.md` to assemble the dashboard.
+
 ### Contribution
 If you have additional MySQL queries or improvements to existing ones that you'd like to contribute, please fork this repository, make your changes, and submit a pull request. Your contributions are greatly appreciated!

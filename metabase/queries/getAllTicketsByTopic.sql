@@ -1,6 +1,3 @@
--- Declare a user-defined variable for help topic
-SET @topic := 'Support'; -- Adjust the help topic as needed
-
 SELECT
     t.number AS ticket_number,
     t.created AS date_created,
@@ -28,4 +25,4 @@ LEFT JOIN ost_thread_entry te ON te.id = (
     WHERE te1.thread_id = th.id
 )
 LEFT JOIN ost_help_topic ht ON t.topic_id = ht.topic_id
-WHERE ht.topic = @topic;
+WHERE ht.topic = {{topic}};
