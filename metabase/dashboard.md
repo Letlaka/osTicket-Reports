@@ -31,10 +31,10 @@
    - Visualization: Table
    - Dashboard filter: `user_id`
 
-6. **Tickets by Source**
-   - Source question: `Tickets by Source`
+6. **Tickets by Topic**
+   - Source question: `Tickets by Topic`
    - Visualization: Table
-   - Dashboard filter: `source`
+   - Dashboard filter: `topic`
 
 ## Recommended dashboard filters
 
@@ -43,7 +43,7 @@
 | `days` | Number | `Ticket Count for Last N Days`, `Tickets Created by Day Offset` |
 | `months` | Number | `Tickets Created in Last N Months` |
 | `user_id` | Number | `Tickets by Agent` |
-| `source` | Text | `Tickets by Source` |
+| `topic` | Text | `Tickets by Topic` |
 
 ## Notes
 

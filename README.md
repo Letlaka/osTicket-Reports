@@ -22,7 +22,7 @@ To leverage these queries effectively, follow these steps:
 
 If you want to build a Metabase dashboard from these reports, use the Metabase-ready SQL files in `/metabase/queries`.
 
-Those queries replace MySQL `SET @variable := ...` statements with Metabase variables such as `{{days}}`, `{{months}}`, `{{user_id}}`, and `{{source}}`, which makes them easier to save as Metabase questions and connect to dashboard filters.
+Those queries replace MySQL `SET @variable := ...` statements with Metabase variables such as `{{days}}`, `{{months}}`, `{{user_id}}`, and `{{topic}}`, which makes them easier to save as Metabase questions and connect to dashboard filters.
 
 The repository now includes:
 

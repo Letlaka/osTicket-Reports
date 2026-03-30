@@ -1,11 +1,5 @@
--- Declare a user-defined variable for source
-SET @source := 'phone'; -- Adjust the source as needed
-
--- Types of supported sources
--- 'web'
--- 'Phone'
--- 'Email'
--- 'Other'
+-- Declare a user-defined variable for help topic
+SET @topic := 'Support'; -- Adjust the help topic as needed
 
 SELECT
     t.number AS ticket_number,
@@ -27,6 +21,11 @@ FROM ost_ticket t
 JOIN ost_user u ON t.user_id = u.id
 JOIN ost_staff s ON t.staff_id = s.staff_id
 JOIN ost_ticket_status ts ON t.status_id = ts.id
-LEFT JOIN ost_thread_entry te ON t.ticket_id = te.staff_id -- Use an appropriate column for the join
+LEFT JOIN ost_thread th ON th.object_id = t.ticket_id AND th.object_type = 'T'
+LEFT JOIN ost_thread_entry te ON te.id = (
+    SELECT MIN(te1.id)
+    FROM ost_thread_entry te1
+    WHERE te1.thread_id = th.id
+)
 LEFT JOIN ost_help_topic ht ON t.topic_id = ht.topic_id
-WHERE t.source = @source;
+WHERE ht.topic = @topic;
